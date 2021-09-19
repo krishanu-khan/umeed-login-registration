@@ -1,0 +1,29 @@
+<%- include('header',{
+    title:'Signup'
+}); -%>
+
+<div class="container">
+    <h1>Sign Up for UMEED Portal</h1>
+    <form action="" method="POST">
+        <label for="user_name">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspName :</label>
+        <input type="text" class="input" name="_name" autocomplete="off" id="user_name" placeholder="Enter name">
+        <label for="user_email">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEmail :</label>
+        <input type="text" class="input" name="_email" autocomplete="off" id="user_email" placeholder="Enter email">
+        <label for="user_pass">&nbsp&nbspPassword :</label>
+        <input type="password" class="input" name="_password" id="user_pass" placeholder="Enter password">
+		<div class="form-group" id="role">
+			<h1>Select appropriate User Role from below options - </h1>
+			<label class="radio-inline"><input type="radio" name="_optradio" value="borrower">Borrower</label>
+			<label class="radio-inline"><input type="radio" name="_optradio" value="retaillender">Retail Lender</label>
+			<label class="radio-inline"><input type="radio" name="_optradio" value="microfinance">Micofinance Corp</label>
+		</div>
+        <% if(typeof msg != 'undefined'){ %>
+        <div class="success-msg"><%= msg %></div><% }
+        if(typeof error !== 'undefined'){ %>
+        <div class="err-msg"><%= error %></div><% } %>
+        <div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" value="Sign Up"></div>
+        <div class="link"><a href="./login">Go to Sign In Page</a></div>
+    </form>
+</div>
+
+<%- include('footer'); -%>

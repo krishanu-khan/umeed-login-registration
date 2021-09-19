@@ -1,0 +1,11 @@
+<%- include('header'); -%>
+<div class="container">
+    <div class="profile">
+        <div><Image class="img-lender"/></div>
+        <h2>Welcome <%= user.name %>!!!</h2>
+        <span>Email : <%= user.email %></span>
+		<span>You are currently logged in as a <%= user.role %></span>
+        <a href="/logout">Log Out</a>
+    </div>
+</div>
+<%- include('footer'); -%>
