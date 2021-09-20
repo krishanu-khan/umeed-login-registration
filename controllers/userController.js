@@ -10,9 +10,18 @@ exports.homePage = async (req, res, next) => {
         return res.redirect('/logout');
     }
 
-    res.render('home', {
-        user: row[0]
-    });
+    switch(row[0].role) {
+				case 'borrower' : res.render('borrower', {user: row[0]});
+								  break;
+				
+				case 'retaillender' : res.render('retaillender', {user: row[0]});
+									  break;
+									  
+				case 'microfinance' : res.render('microcorp', {user: row[0]});
+									  break;
+				
+				
+			}
 }
 
 //Borrower Page
@@ -23,9 +32,13 @@ exports.borrowerPage = async (req, res, next) => {
         return res.redirect('/logout');
     }
 
-    res.render('borrower', {
-        user: row[0]
-    });
+	if(row[0].role == 'borrower'){
+		res.render('borrower', {user: row[0]});
+	}
+	else {
+		return res.redirect('/logout');
+	}
+	
 }
 
 //Retail Lender Page
@@ -35,10 +48,13 @@ exports.retailLenderPage = async (req, res, next) => {
     if (row.length !== 1) {
         return res.redirect('/logout');
     }
-
-    res.render('retaillender', {
-        user: row[0]
-    });
+	
+	if(row[0].role == 'retaillender'){
+		res.render('retaillender', {user: row[0]});
+	}
+	else {
+		return res.redirect('/logout');
+	}
 }
 
 //Microfinance Corp Page
@@ -48,10 +64,13 @@ exports.microcorpPage = async (req, res, next) => {
     if (row.length !== 1) {
         return res.redirect('/logout');
     }
-
-    res.render('microcorp', {
-        user: row[0]
-    });
+	
+	if(row[0].role == 'microfinance'){
+		res.render('microcorp', {user: row[0]});
+	}
+	else {
+		return res.redirect('/logout');
+	}
 }
 
 // Register Page
