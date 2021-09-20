@@ -1,5 +1,5 @@
 {
-  "name": "umeed-login-registration",
+  "name": "ummeed",
   "version": "1.0.0",
   "description": "Node JS Login And Registration System for UMEED",
   "main": "index.js",
