@@ -1,5 +1,5 @@
-# umeed-login-registration
-UMEED Login and Registration
+# ummeed
+UMEED Login and Registration (basic)
 To run the portal follow the instructions below - <br/>
 A. Clone the umeed-login-registration Repository to Local<br/>
 B. Run the command (npm i express ejs express-session express-validator bcryptjs mysql2) from umeed-login-registration directory (cd to path)<br/>
